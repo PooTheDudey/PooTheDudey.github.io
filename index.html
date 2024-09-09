@@ -3,99 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pooja Bahuguna - Portfolio</title>
+    <title>Pooja Bahuguna Portfolio</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- MAIN CONTAINER -->
-    <div id="main_container">
-        <!-- HEADER -->
-        <div id="header">
-            <!-- LOGOTYPE/NAME -->
-            <div class="header_logotype_container">
-                <h1 class="logotype_name">Pooja <span class="purple">Bahuguna</span></h1>
-                <h2 class="logotype_occupation">Engineering Management | DevOps Specialist</h2>
+    <section class="hero">
+        <div class="content">
+            <div class="header">
+                <h1>Pooja Bahuguna Portfolio</h1>
             </div>
-            <!-- MAIN MENU -->
-            <div class="header_menu_container">
-                <ul class="download_print_buttons horizontal_list">
-                    <li><a href="#"><span class="icon entypo-download"></span>Download CV</a></li>
-                    <li><a href="#"><span class="icon entypo-print"></span>Print CV</a></li>
-                </ul>
-                <div class="clear"></div>
-                <ul class="header_menu horizontal_list">
-                    <li><a class="no_border purple" href="#">Profile</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Experience</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
+        </div>
+    </section>
+
+    <section class="about-myself">
+        <div class="content">
+            <h2>Hi!</h2>
+            <p>I'm <span>Pooja Bahuguna</span>, currently pursuing a Master's in Engineering Management at Purdue University. I specialize in DevOps, cloud computing, and product management. I am passionate about solving complex problems and developing innovative solutions in the tech world.</p>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="content">
+            <h1>Experiences</h1>
+            <ul>
+                <li>
+                    <div class="experience-content hidden">
+                        <h2>Program Manager, Entrepreneurs of Tomorrow</h2>
+                        <div class="experience-time">July 2024 - Present</div>
+                        <p>Leading strategic initiatives for the 'Youthpreneur' and 'Pitch For Your Life' events, driving success through planning and execution, and collaborating with cross-functional teams for UI/UX and web development projects.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="experience-content hidden">
+                        <h2>Product Engineer, Ollion (Remote)</h2>
+                        <div class="experience-time">Oct 2021 - Dec 2023</div>
+                        <p>Spearheaded product development from concept to market launch, optimized processes, and facilitated MVP demonstrations and A/B testing to improve product functionalities.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="experience-content hidden">
+                        <h2>DevOps Engineer, ToTheNew</h2>
+                        <div class="experience-time">Feb 2020 - Oct 2021</div>
+                        <p>Delivered critical CI/CD pipelines for MaxLife Insurance, improving deployment frequency and customer satisfaction. Developed a DevOps Wiki, boosting team productivity by 35%.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="content">
+            <div class="development-wrapper">
+                <h2 class="development-title">Skills</h2>
+                <ul class="skills-bar-container">
+                    <li>
+                        <div class="progressbar-title">
+                            <h3>AWS</h3>
+                            <span class="percent" id="aws-percent"></span>
+                        </div>
+                        <div class="bar-container" data-percent="95">
+                            <span class="progressbar" id="progress-aws"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="progressbar-title">
+                            <h3>Python</h3>
+                            <span class="percent" id="python-percent"></span>
+                        </div>
+                        <div class="bar-container" data-percent="90">
+                            <span class="progressbar" id="progress-python"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="progressbar-title">
+                            <h3>DevOps</h3>
+                            <span class="percent" id="devops-percent"></span>
+                        </div>
+                        <div class="bar-container" data-percent="85">
+                            <span class="progressbar" id="progress-devops"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="progressbar-title">
+                            <h3>Agile / Scrum</h3>
+                            <span class="percent" id="scrum-percent"></span>
+                        </div>
+                        <div class="bar-container" data-percent="80">
+                            <span class="progressbar" id="progress-scrum"></span>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
-        <!-- LEFT COLUMN (Profile and Contact Info) -->
-        <div id="left_col">
-            <div class="profile_frame">
-                <div class="profile_picture"></div>
-            </div>
-            <div class="hello_content">
-                <h2>Hello!</h2>
-                <p>I am passionate about solving complex problems in the tech and management world. With experience in multiple industries, I am constantly learning and applying new skills.</p>
-            </div>
-            <div class="contact_details_content">
-                <h2>Contact details</h2>
-                <p class="purple">Phone:</p>
-                <p>+1 (765)-532-9017</p>
-                <p class="purple">Email:</p>
-                <p>pbahugun@purdue.edu</p>
-                <p class="purple">Location:</p>
-                <p>United States</p>
-            </div>
-            <a href="mailto:pbahugun@purdue.edu" class="send_message_button">
-                <span class="cut1"></span>
-                <span class="cut2"></span>
-                <span class="content">Send me a message <span class="fas fa-angle-double-right"></span></span>
+    </section>
+
+    <section class="resume">
+        <div class="content">
+            <a href="your-cv-link.pdf" target="_blank">
+                <div class="btn-resume">
+                    <i class="fa fa-download fa-2x" aria-hidden="true"></i>
+                    <span>Download my resume<span>
+                </div>
             </a>
-            <div class="get_social_content">
-                <h2>Get social</h2>
-                <ul class="social_icons horizontal_list">
-                    <li><a class="linkedin" href="https://www.linkedin.com/in/pooja-bahuguna-524b5617b/"><span class="fab fa-linkedin"></span><span class="invisible">LinkedIn</span></a></li>
-                    <!-- Add more social links here -->
-                </ul>
-            </div>
         </div>
-        <!-- PROFILE CONTENT -->
-        <div id="content_container">
-            <div class="block">
-                <h1>Profile</h1>
-                <blockquote class="profile_quote">
-                    <p>"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela</p>
-                    <span class="entypo-quote"></span>
-                </blockquote>
-            </div>
-            <div class="block">
-                <h2>A few words about me</h2>
-                <p>I am an Engineering Management student at Purdue University with a background in DevOps, cloud computing, and product management. My goal is to develop innovative solutions that improve operations and customer experiences.</p>
-            </div>
-            <div class="block">
-                <h2>Philosophy</h2>
-                <p>I believe in continuous improvement and taking a pragmatic approach to problem-solving. Honesty, respect, and openness guide my personal and professional life.</p>
-            </div>
-            <div class="block last">
-                <h2>Interests & Hobbies</h2>
-                <p>When I'm not working, I enjoy exploring new places, hiking, and learning about new technologies.</p>
-            </div>
+    </section>
+
+    <section class="eli">
+        <div class="content">
+            <h1>Experiential Learning International (ELI)</h1>
+            <p>I participated in the Experiential Learning International (ELI) program, where I collected and analyzed market data for business expansion, focusing on reduced methane solutions for Tiger Business/Eco-Tek LLC. This experience enriched my understanding of international business dynamics and sustainability strategies.</p>
         </div>
-        <div class="clear"></div>
-        <!-- FOOTER -->
-        <div id="footer">
-            <p class="footer_name">Pooja Bahuguna Portfolio © 2024</p>
+    </section>
+
+    <section class="contact">
+        <div class="content">
+            <ul class="socials">
+                <li class="social">
+                    <a href="mailto:pbahugun@purdue.edu" class="email">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li class="social">
+                    <a href="https://www.linkedin.com/in/pooja-bahuguna-524b5617b/" class="linkedin" target="_blank">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
+    </section>
+
+    <!-- Include the JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>
