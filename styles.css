@@ -15,9 +15,9 @@ section {
     padding: 50px 20px;
 }
 
+/* Hero Section with Background Image */
 .hero {
-    background: url('https://source.unsplash.com/a2NRu2Wxa2o/') no-repeat center;
-    background-size: cover;
+    background: url('Purdue.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -70,46 +70,38 @@ section {
     margin: 20px 0;
 }
 
-.skills .development-title {
+/* Skills Section without Percentages */
+.skills {
+    background: #f0f0f0;
+    padding: 50px 0;
+}
+
+.skills .content {
     text-align: center;
-    font-size: 2em;
+}
+
+.skills h2 {
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.skills-bar-container {
-    list-style: none;
+.skills-list {
+    list-style-type: none;
     padding: 0;
+    font-size: 1.2em;
 }
 
-.skills-bar-container li {
-    margin-bottom: 20px;
-}
-
-.progressbar-title h3 {
-    display: inline-block;
-}
-
-.bar-container {
-    background: #ececec;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-}
-
-.progressbar {
-    background: #34495e;
-    height: 100%;
-    width: 0;
+.skills-list li {
+    margin: 10px 0;
 }
 
 .resume .btn-resume {
-     display: inline-block;
+    display: inline-block;
     padding: 20px;
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid #fff;
     border-radius: 5px;
-    color: #000; 
+    color: #000;
 }
 
 .eli {
@@ -132,4 +124,14 @@ section {
 
 .contact .socials .social {
     display: inline-block;
-    margin:
+    margin: 0 10px;
+}
+
+.contact .socials .social a {
+    font-size: 2em;
+    color: #444;
+}
+
+.contact .socials .social a:hover {
+    color: #c0392b;
+}
