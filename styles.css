@@ -1,276 +1,426 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-
-$profileBg:#fff;
-$skillsBg:#3d3e42;
-$profileColor:#9099a0;
-$skillsColor:#9099a0; 
-$linkColor:#66cc99;
-$boldColor:#4a4e51;
-$time:0.6s;
-
- 
-@mixin breakpoint($point) {
-  @if $point == papa-bear {
-    @media (max-width: 1500px)  { @content; }
-  }
-  @if $point == mama-bear {
-    @media (max-width: 1200px)  { @content; }
-  }
-  @if $point == brother-bear {
-    @media (max-width: 850px)  { @content; }
-  }
-  @else if $point == baby-bear {
-    @media (max-width: 450px)  { @content; }
-  }
+@import url(https://weloveiconfonts.com/api/?family=entypo|fontawesome);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
 }
 
-*, *::after, *::before {
-  box-sizing:border-box;
+/* Utils */
+
+.clear {
+	clear: both;
+}
+.purple {
+	color: #837c9a;
 }
 
-html,body {
-  height: 100%;
+.block {
+	margin: 25px 30px;
 }
+	.block h1 {
+		margin-left: -5px;
+		font-weight: 200;
+	}
+
+.last.block {
+	margin-bottom: 110px;
+}
+
+.horizontal_list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+	.horizontal_list li {
+		float: left;
+	}
+	.horizontal_list li:before {
+		content: none;
+	}
+	.horizontal_list li { 
+		padding-left: 0; 
+		text-indent: 0;
+	}
+
+.horizontal_line{
+	margin: 34px 0 0 30px;
+	height: 26px;
+	position: relative;	
+}
+	.line_left,
+	.line_right{
+		border-top: 1px solid #434247;
+		width: 305px;
+		margin-top: 13px;
+	}
+	.line_left{
+		float: left;
+	}
+	.line_right {
+		float: right;
+	}
+	.left_circle, 
+	.central_circle, 
+	.right_circle {
+		background: rgb(69,68,73);
+		background: rgba(255,255,255, 0.15);
+		position: absolute;
+		border-radius: 50px;
+	}
+	.left_circle, 
+	.right_circle {
+		width: 13px;
+		height: 13px;
+		top: 7px;
+	}
+	.left_circle{
+		left: 314px;
+	}
+	.central_circle{
+		width: 26px;
+		height: 26px;		
+		top: 0px;
+		left: 322px;
+	}
+	.right_circle{
+		left: 343px;
+	}
+	
+/* Main tags */
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size:16px;
-  line-height:1.5em;
-}
-a{color:$linkColor; text-decoration:none;}
-.clearfix::after, .clearfix::before {
-  content: " ";
-	display: table;
-}
-.clearfix::after{clear:both;}
-.bold {color:$boldColor; font-weight:400;}
-
-.resume-wrapper {
-  position:relative;
-  text-align:center;
-  height:100%;
+	background: url(https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png) repeat;
+	margin: 0;
 }
 
-.container {
-  min-height:600px;
-} 
-
-.profile {
-  background:$profileBg;
-  width:40%;
-  float:left;
-  color:$profileColor;
-  @include breakpoint(brother-bear) { width: 100%; }
-  .name-wrapper {
-    float:left;
-    width:60%;
-  }
-  h1 {
-    font-size:2.5em;
-    text-align:left;
-    font-family: 'Varela Round', sans-serif;
-    color:$boldColor;
-    text-transform:uppercase;
-    line-height:1em;
-    padding-top:40px; 
-    @include breakpoint(mama-bear) {
-       padding-top:20px;
-    }
-    @include breakpoint(baby-bear) {
-      font-size:1.8em;  
-      padding-top:20px;
-    } 
-  }
-  li {
-      margin-bottom:10px;
-    }
-  .picture-resume-wrapper {
-    width:40%;
-    display:block;
-    float:left;
-    @include breakpoint(mama-bear) {
-       width:100%;
-    }
-  }
-  .picture-resume {
-    width:220px;
-    height:220px;
-    background-size:cover;
-    border-radius:50%;
-    margin-right:0px;
-    display:table;
-    position:relative;
-    vertical-align:middle;
-    span {
-        display:table-cell;
-        vertical-align: middle;
-        position:relative;
-        margin:0 auto;
-        z-index:10;
-       text-align:center
-    }
-    img {
-      border-radius:50%;
-      width:130px;
-      @include breakpoint(papa-bear) {
-        width:80px;
-      }
-      @include breakpoint(mama-bear) {
-        width:120px;
-        height:120px;
-      }
-    }
-    @include breakpoint(papa-bear) {
-      width:150px;
-      height:150px;
-    }
-    @include breakpoint(mama-bear) {
-      width:200px;
-      height:200px;
-    }
-     @include breakpoint(baby-bear) { width:180px;height:180px; } 
-  }
-  .contact-info{
-    margin-top:100px;
-    font-weight:300;
-    @include breakpoint(mama-bear) {margin-top:70px; } 
-    @include breakpoint(baby-bear) { margin-top:50px; } 
-  }
-  .list-titles {
-    float:left;
-    text-align:left;
-    font-weight:600;
-    width:40%;
-    color:$boldColor;
-  }
-  .list-content{
-    float:left;
-    width:60%;
-    text-align:left;
-    font-weight:300;
-  }
-  .contact-presentation {
-    text-align:left;
-    font-weight:300;
-    margin-top:100px;
-    margin-bottom:100px;
-    @include breakpoint(mama-bear) {margin-top:70px;margin-bottom:70px; } 
-    @include breakpoint(brother-bear) {margin-top:50px;margin-bottom:50px; } 
-    
-  }
-  svg {
-    width:100%;
-    position:absolute;
-    top:0;
-    left:0;
-    //display:none;
-  }
-
-  .st0, .st1 {
-    fill:#66cc99;
-  }
-
+h1,h2,h3, h4 {
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-weight: 300;
+	color: #48DA9B;
 }
-.experience {
-  background:$skillsBg;
-  width:60%;
-  float:left;
-  position:relative;
-  color:$skillsColor;
-  font-weight:300;
-  min-height:100%;
-  min-height:100vh;
-  @include breakpoint(brother-bear) { width: 100%; } 
-  h3.experience-title {
-    color:$linkColor;
-    text-align:left;
-    text-transform:uppercase;
-    font-size:1.2em;
-    margin-bottom:20px;
-    font-weight:400;
-  }
-  .company-wrapper {
-    width:30%;
-    float:left;
-    text-align:left;
-    padding-right:5%;
-    margin-bottom:60px;
-    @include breakpoint(baby-bear) {width:100%; margin-bottom:20px;} 
-  }
-  .job-wrapper {
-    width:70%;
-    float:left;
-    text-align:left;
-    padding-right:5%;
-    margin-bottom:60px;
-    @include breakpoint(baby-bear) {width:100%;margin-bottom:40px;} 
-  }
-  .experience-title {
-      color:white;
-      margin-bottom:15px;;
-    }
+	h1 {
+		font-size: 48px;
+		font-weight: 300;
+		margin: 20px 0;
+	}
+	h2 {
+		font-size: 28px;
+		margin: 32px 0 24px;
+	}
+	h3 {
+		font-size: 24px;
+	}
+	h4 {
+		font-size: 18px;
+		font-weight: 400;
+	}
+
+blockquote {
+	font-style: italic;
+	margin: 25px 0;
+	padding-left: 20px;
+	border-left: 2px solid #48DA9B;
+}
+	
+blockquote, p , a, li {
+	font-family: 'Lato', Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #e4e3e8;
 }
 
-.section-padding {
- padding:60px 60px 40px 40px;
- @include breakpoint(brother-bear) { padding:80px 15% 40px 10%; }
- @include breakpoint(baby-bear) { padding:40px 10% 20px 5%; }
+a:focus { 
+    outline: none;
 }
 
-.section-wrapper {
-  width:50%;
-  float:left;
-  text-align:left;
-  color:$skillsColor;
-  font-weight:300;
-  margin-bottom:20px;
-  @include breakpoint(baby-bear) {width:100%;}
-  &:nth-child(3){ 
-    padding-right:8%;
-  }
-  h3.section-title {
-    color:$linkColor;
-    text-align:left;
-    text-transform:uppercase;
-    font-size:1.2em;
-    margin-bottom:20px;
-    font-weight:400;
-  }
-  .skill-percentage {
-    margin-bottom:10px;
-    position:relative;
-    &::after {
-      content:"";
-      width:100%;
-      height:6px;
-      background:$boldColor;
-      display:block;
-      margin-top:3px;
-    }
-    &::before{
-      content:"";
-      height:6px;
-      background:$linkColor;
-      position:absolute;
-      margin-top:3px;
-      bottom:0;
-    }
-    &:nth-child(1)::before {width:80%;animation: skill_1 $time ease;}
-    &:nth-child(2)::before {width:90%; animation: skill_2 $time ease;} 
-    &:nth-child(3)::before {width:50%;animation: skill_3 $time ease;}
-    &:nth-child(4)::before {width:60%;animation: skill_4 $time ease;}
-    &:nth-child(5)::before {width:70%;animation: skill_5 $time ease;}
-    &:nth-child(6)::before {width:70%;animation: skill_6 $time ease;}
-    &:nth-child(7)::before {width:70%;animation: skill_6 $time ease;}
-  }
-  
+ul {
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+	li { 
+		padding-left: 1em; 
+		text-indent: -.7em;
+	}
+	li:before {
+		content: "• ";
+		color: #837c9a;
+		font-size: 20px;
+		padding-right: 8px;
+	}
+
+/* Containers size */
+
+#main_container {
+	width: 960px;
+	margin: 0 auto;
+}
+	#header {
+		height: 130px;
+		border-bottom: 1px solid #403F44;
+	}
+		.header_logotype_container {
+			width: 260px;
+			height: 130px;
+			border-right: 1px solid #403F44;
+			float: left;
+		}
+		.header_menu_container {
+			height: 130px;
+			width: 699px;
+			float: left;
+		}
+			.header_menu_container a {
+				font-family: 'Lato', Helvetica, sans-serif;
+			}
+	#left_col {
+		width: 260px;
+		float: left;
+	}
+	#content_container {
+		width: 699px;
+		border-left: 1px solid #403F44;
+		float: left;
+	}
+	#footer {
+		width: 960px;
+		height: 60px;
+		border-top: 1px solid #403F44;
+		display: inline-block;
+	}
+
+/* HEADER */
+
+.logotype_name{
+	text-transform: uppercase;
+	font-size: 32px;
+	margin: 43px 0 0;
+}
+.logotype_occupation{
+	text-transform: uppercase;
+	margin-top: 5px;
+	color: #5ce2af;
+	font-size: 14px;
+	letter-spacing: 2px;
+	padding-left: 7px;
 }
 
-@keyframes skill_1 {from {width:0%;}to {width:80%;}}
-@keyframes skill_2 {from {width:0%;}to {width:90%;}}
-@keyframes skill_3 {from {width:0%;}to {width:50%;}}
-@keyframes skill_4 {from {width:0%;}to {width:60%;}}
-@keyframes skill_5 {from {width:0%;}to {width:70%;}}  
-@keyframes skill_6 {from {width:0%;}to {width:70%;}}
-@keyframes skill_7 {from {width:0%;}to {width:70%;}}
+.download_print_buttons {
+	width: 225px;
+	height: 45px;
+	float: right;
+}
+	.download_print_buttons a {
+		text-decoration: none;
+		font-size: 12px;
+		font-family: 'Lato', Helvetica, sans-serif;
+		font-style: italic;
+		line-height: 45px;
+		padding: 16px 17px;
+		background: #353638;
+	}
+		.download_print_buttons a:hover {
+			background: #020609;
+		}
+		.download_print_buttons .icon {
+			color: #02070a;
+			padding-right: 6px;
+			font-style: normal;
+			font-size: 18px;
+		}
+		.icon-angle-double-right {
+			position: relative;
+			top: 2px;
+		}
+			.download_print_buttons a:hover .icon {
+				color: #e4e3e8;
+			}
+			
+.header_menu {
+	width: 699px;
+	margin-top: 40px;
+	margin-left: 5px;
+}
+	.header_menu a{
+		text-decoration: none;
+		padding: 0 20px;
+		border-left: 1px solid #e4e3e8;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.header_menu a.no_border{
+		border-left: none;
+	}
+		.header_menu a:hover {
+			color: #837c9a;
+		}
+		
+/* LEFT NAV */
+
+#left_nav h2 {
+	margin: 0;
+	font-size: 24px;
+}
+
+.profile_frame{
+	width: 230px;
+	height: 260px;
+	background: black;
+	border: 1px solid #403F44;
+	margin-top: 30px;
+}
+	.profile_picture{
+		width: 210px;
+		height: 240px;
+		margin:10px;
+		background: url(//s3-us-west-2.amazonaws.com/s.cdpn.io/86033/profile/profile-512_3.jpg) 100% /210px no-repeat;
+	}
+
+.hello_content,
+.contact_details_content {
+	margin-top: 25px;
+}
+
+.hello_content{
+	width: 230px;
+}
+.contact_details_content h2 + p.purple{
+	margin-top: 10px;
+}
+.contact_details_content p{
+	margin: 0;
+}
+.contact_details_content p.purple{
+	margin-top: 25px;
+}
+
+.send_message_button,
+.special_button {
+	margin-top: 25px;
+	display: block;
+	background: #48DA9B;
+	width: 230px;
+	height: 50px;
+	position: relative;
+	z-index: 1;
+}
+	.cut1:after {
+		content: "";
+		position: absolute;
+		bottom: -19px;
+		left: -20px;
+		width: 30px;
+		height: 30px;
+		z-index: 9;
+		background: url(https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png) repeat;
+    transform: rotate(45deg);
+	}
+	.cut2:before {
+	    content: "";
+	    position: absolute;
+	    top: -19px;
+	    right: -20px;
+	    width: 30px;
+	    height: 30px;
+	    z-index: 9;
+	    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/dark_wall.png) repeat;
+      transform: rotate(45deg);
+	}
+	.content {
+	    text-align: center;		
+	    color: #04080b;
+	    width: 100%;
+	    height: 40px;
+	    position: absolute;
+	    z-index: 2;
+	    font: 18px 'Lato', Arial, sans-serif;
+	    margin: 0;
+	    padding: 16px 0 0;
+        top: -4px;
+        bottom: 10px;
+	    border-top: 1px solid #403F44;
+	    border-bottom: 1px solid #403F44;
+	}
+	.send_message_button:hover,
+	.special_button:hover {
+		background: #29C782;
+	}
+
+.get_social_content {
+	margin-top: 15px;
+}
+  .get_social_content h2{
+    margin-bottom: 8px;
+  }
+	.social_icons {
+		margin-left: -8px;
+	}
+	.social_icons a {
+		font-size: 35px;
+		text-decoration: none;
+		color: #000507;
+		padding: 0;
+		padding: 0 5px;
+	}
+		.social_icons a span.invisible {
+			display:none;
+		}
+		.social_icons .facebook:hover{
+			background: #3b5998;
+			color: #dfe3ee;
+			border-top-right-radius: 50px;
+			border-bottom-left-radius: 50px;
+		}
+		.social_icons .twitter:hover{
+			background: #00B0ED;
+			color: #fff;
+			border-top-left-radius: 50px;
+			border-bottom-right-radius: 50px;
+		}
+		.social_icons .linkedin:hover{
+			background: #007bb6;
+			color: #fff;
+			border-top-right-radius: 50px;
+			border-bottom-left-radius: 50px;
+		}
+
+.footer_name {
+	font-style: italic;
+	margin-top: 20px;
+}
+
+/* Profile Content */
+
+.profile_quote {
+	position: relative;
+	/* margin-left: 5px; */
+}
+	.profile_quote p {
+		font-size: 17px;
+		width: 455px;
+	}
+	.profile_quote  .entypo-quote {
+		color: #3d3a41;
+		font-size: 80px;
+    font-style: normal;
+		position: absolute;
+		top: -20px;
+		right: 70px;
+		cursor: default;
+	}
+
+.philosophy_content {
+	margin-top: 20px;
+}
+	.philosophy_content p {
+		margin: 0;
+		width: 370px;
+		float: left;
+	}
+	.philosophy_content ul {
+		float: left;
+		padding-left: 40px;
+	}
